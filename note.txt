@@ -1,0 +1,22 @@
+▣ 타입스크립트 환경 설정
+
+1. 설치
+  npm i -g typescript
+
+2. tsconfig.json 생성  
+ 1) tsc --init
+ 2) js 빌드 폴더 : build, ts 소스폴더 : src 생성
+ 3) tsconfig.json
+  - rootdir, outdir 설정 
+    "outDir": "./build",
+    "rootDir": "./src",
+
+3. nodemon 설치
+  npm i -s nodemon
+
+4. pakage.json 생성
+  1) npm init
+  2) 시작 환경 세팅    
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
